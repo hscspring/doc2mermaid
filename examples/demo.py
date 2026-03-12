@@ -3,14 +3,14 @@ Quick demo: generate a knowledge map from a sample document.
 
 Usage:
     # Set env vars first:
-    export DOC2MAP_BASE_URL=https://api.qnaigc.com/v1
-    export DOC2MAP_API_KEY=your-key
-    export DOC2MAP_MODEL=minimax/minimax-m2.5
+    export DOC2MERMAID_BASE_URL=https://api.qnaigc.com/v1
+    export DOC2MERMAID_API_KEY=your-key
+    export DOC2MERMAID_MODEL=minimax/minimax-m2.5
 
     python examples/demo.py
 """
 
-from doc2map import doc_to_map
+from doc2mermaid import doc_to_map
 
 SAMPLE_DOC = """
 # RolePlay Data Synthesis with Reward Model Filtering

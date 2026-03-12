@@ -1,14 +1,14 @@
-"""Tests for doc2map.cli — command-line interface."""
+"""Tests for doc2mermaid.cli — command-line interface."""
 
 import sys
 import pytest
 from unittest.mock import patch, MagicMock
-from doc2map.cli import main
+from doc2mermaid.cli import main
 
 
 class TestCli:
 
-    @patch("doc2map.cli.doc_to_map", return_value="/tmp/out.svg")
+    @patch("doc2mermaid.cli.doc_to_map", return_value="/tmp/out.svg")
     def test_basic_invocation(self, mock_d2m, tmp_path):
         infile = tmp_path / "input.md"
         infile.write_text("# Hello\nSome content here.")
@@ -30,7 +30,7 @@ class TestCli:
             with pytest.raises(SystemExit):
                 main()
 
-    @patch("doc2map.cli.doc_to_map", side_effect=ValueError("bad config"))
+    @patch("doc2mermaid.cli.doc_to_map", side_effect=ValueError("bad config"))
     def test_error_exits(self, mock_d2m, tmp_path):
         infile = tmp_path / "input.md"
         infile.write_text("Content")
@@ -39,7 +39,7 @@ class TestCli:
             with pytest.raises(SystemExit):
                 main()
 
-    @patch("doc2map.cli.doc_to_map", return_value="/tmp/out.svg")
+    @patch("doc2mermaid.cli.doc_to_map", return_value="/tmp/out.svg")
     def test_stdin_input(self, mock_d2m, monkeypatch):
         monkeypatch.setattr("sys.stdin", MagicMock(read=lambda: "stdin content"))
 

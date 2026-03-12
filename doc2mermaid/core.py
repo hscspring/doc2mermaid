@@ -11,8 +11,8 @@ try:
 except ImportError:
     pass
 
-from doc2map.extractor import extract_graph
-from doc2map.renderer import graph_to_mermaid, render_mermaid
+from doc2mermaid.extractor import extract_graph
+from doc2mermaid.renderer import graph_to_mermaid, render_mermaid
 
 
 def doc_to_map(
@@ -37,14 +37,14 @@ def doc_to_map(
     Returns:
         Absolute path to the generated image file.
     """
-    base_url = llm_base_url or os.getenv("DOC2MAP_BASE_URL", "")
-    api_key = llm_api_key or os.getenv("DOC2MAP_API_KEY", "")
-    model = llm_model or os.getenv("DOC2MAP_MODEL", "")
+    base_url = llm_base_url or os.getenv("DOC2MERMAID_BASE_URL", "")
+    api_key = llm_api_key or os.getenv("DOC2MERMAID_API_KEY", "")
+    model = llm_model or os.getenv("DOC2MERMAID_MODEL", "")
 
     if not all([base_url, api_key, model]):
         raise ValueError(
             "LLM config required. Pass llm_base_url/llm_api_key/llm_model "
-            "or set DOC2MAP_BASE_URL, DOC2MAP_API_KEY, DOC2MAP_MODEL env vars."
+            "or set DOC2MERMAID_BASE_URL, DOC2MERMAID_API_KEY, DOC2MERMAID_MODEL env vars."
         )
 
     graph = extract_graph(text, base_url=base_url, api_key=api_key, model=model)

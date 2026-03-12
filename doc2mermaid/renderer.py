@@ -7,7 +7,7 @@ import shutil
 import tempfile
 from pathlib import Path
 
-from doc2map.styles import wrap_node_text, generate_style_defs
+from doc2mermaid.styles import wrap_node_text, generate_style_defs
 
 
 def graph_to_mermaid(graph: dict, *, theme: str = "default") -> str:

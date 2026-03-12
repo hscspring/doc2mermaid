@@ -1,7 +1,7 @@
-"""Tests for doc2map.extractor — JSON parsing and validation."""
+"""Tests for doc2mermaid.extractor — JSON parsing and validation."""
 
 import pytest
-from doc2map.extractor import _parse_graph_json, _validate_graph
+from doc2mermaid.extractor import _parse_graph_json, _validate_graph
 
 
 # ---------- _parse_graph_json ----------

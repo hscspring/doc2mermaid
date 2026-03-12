@@ -1,6 +1,6 @@
-"""Tests for doc2map.styles — node shapes and color mapping."""
+"""Tests for doc2mermaid.styles — node shapes and color mapping."""
 
-from doc2map.styles import wrap_node_text, generate_style_defs, NODE_COLORS, NODE_SHAPES
+from doc2mermaid.styles import wrap_node_text, generate_style_defs, NODE_COLORS, NODE_SHAPES
 
 
 class TestWrapNodeText:

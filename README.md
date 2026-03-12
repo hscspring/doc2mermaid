@@ -20,7 +20,7 @@ npm install -g @mermaid-js/mermaid-cli
 ### Python API
 
 ```python
-from doc2map import doc_to_map
+from doc2mermaid import doc_to_map
 
 svg_path = doc_to_map(
     open("article.md").read(),
@@ -34,9 +34,9 @@ svg_path = doc_to_map(
 ### CLI
 
 ```bash
-export DOC2MAP_BASE_URL=https://api.openai.com/v1
-export DOC2MAP_API_KEY=sk-...
-export DOC2MAP_MODEL=gpt-4o-mini
+export DOC2MERMAID_BASE_URL=https://api.openai.com/v1
+export DOC2MERMAID_API_KEY=sk-...
+export DOC2MERMAID_MODEL=gpt-4o-mini
 
 doc2mermaid article.md -o map.svg
 doc2mermaid article.md -o map.png --theme dark
@@ -66,9 +66,9 @@ LLM settings via environment variables or function arguments:
 
 | Env Var | Argument | Description |
 |---------|----------|-------------|
-| `DOC2MAP_BASE_URL` | `llm_base_url` | OpenAI-compatible API base URL |
-| `DOC2MAP_API_KEY` | `llm_api_key` | API key |
-| `DOC2MAP_MODEL` | `llm_model` | Model identifier |
+| `DOC2MERMAID_BASE_URL` | `llm_base_url` | OpenAI-compatible API base URL |
+| `DOC2MERMAID_API_KEY` | `llm_api_key` | API key |
+| `DOC2MERMAID_MODEL` | `llm_model` | Model identifier |
 
 Works with any OpenAI-compatible API (OpenAI, Claude, DeepSeek, local models, etc.).
 

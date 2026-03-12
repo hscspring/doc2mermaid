@@ -1,16 +1,16 @@
 """
-Command-line interface for doc2map.
+Command-line interface for doc2mermaid.
 
 Usage:
-    doc2map input.md -o output.svg
-    doc2map input.md -o output.png --theme dark
-    cat article.txt | doc2map - -o map.svg
+    doc2mermaid input.md -o output.svg
+    doc2mermaid input.md -o output.png --theme dark
+    cat article.txt | doc2mermaid - -o map.svg
 """
 
 import argparse
 import sys
 
-from doc2map.core import doc_to_map
+from doc2mermaid.core import doc_to_map
 
 
 def main():
@@ -30,17 +30,17 @@ def main():
     parser.add_argument(
         "--base-url",
         default="",
-        help="LLM API base URL (or set DOC2MAP_BASE_URL env var)",
+        help="LLM API base URL (or set DOC2MERMAID_BASE_URL env var)",
     )
     parser.add_argument(
         "--api-key",
         default="",
-        help="LLM API key (or set DOC2MAP_API_KEY env var)",
+        help="LLM API key (or set DOC2MERMAID_API_KEY env var)",
     )
     parser.add_argument(
         "--model",
         default="",
-        help="LLM model ID (or set DOC2MAP_MODEL env var)",
+        help="LLM model ID (or set DOC2MERMAID_MODEL env var)",
     )
     parser.add_argument(
         "--theme",

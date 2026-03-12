@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "doc2mermaid"
-version = "0.1.0"
+version = "0.1.1"
 description = "Convert documents to visual knowledge maps via LLM + Mermaid"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -27,4 +27,4 @@ dev = [
 ]
 
 [project.scripts]
-doc2mermaid = "doc2map.cli:main"
+doc2mermaid = "doc2mermaid.cli:main"

@@ -1,9 +1,9 @@
-"""Tests for doc2map.renderer — Mermaid code generation and rendering."""
+"""Tests for doc2mermaid.renderer — Mermaid code generation and rendering."""
 
 import shutil
 import pytest
 from pathlib import Path
-from doc2map.renderer import graph_to_mermaid, render_mermaid
+from doc2mermaid.renderer import graph_to_mermaid, render_mermaid
 
 
 SAMPLE_GRAPH = {
