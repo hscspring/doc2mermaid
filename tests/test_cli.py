@@ -14,7 +14,7 @@ class TestCli:
         infile.write_text("# Hello\nSome content here.")
         outfile = str(tmp_path / "out.svg")
 
-        with patch("sys.argv", ["doc2map", str(infile), "-o", outfile,
+        with patch("sys.argv", ["doc2mermaid", str(infile), "-o", outfile,
                                 "--base-url", "http://x", "--api-key", "k", "--model", "m"]):
             main()
 
@@ -26,7 +26,7 @@ class TestCli:
         infile = tmp_path / "empty.md"
         infile.write_text("")
 
-        with patch("sys.argv", ["doc2map", str(infile)]):
+        with patch("sys.argv", ["doc2mermaid", str(infile)]):
             with pytest.raises(SystemExit):
                 main()
 
@@ -35,7 +35,7 @@ class TestCli:
         infile = tmp_path / "input.md"
         infile.write_text("Content")
 
-        with patch("sys.argv", ["doc2map", str(infile)]):
+        with patch("sys.argv", ["doc2mermaid", str(infile)]):
             with pytest.raises(SystemExit):
                 main()
 
@@ -43,7 +43,7 @@ class TestCli:
     def test_stdin_input(self, mock_d2m, monkeypatch):
         monkeypatch.setattr("sys.stdin", MagicMock(read=lambda: "stdin content"))
 
-        with patch("sys.argv", ["doc2map", "-", "-o", "/tmp/out.svg",
+        with patch("sys.argv", ["doc2mermaid", "-", "-o", "/tmp/out.svg",
                                 "--base-url", "http://x", "--api-key", "k", "--model", "m"]):
             main()
 

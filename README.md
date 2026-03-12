@@ -1,4 +1,4 @@
-# doc2map
+# doc2mermaid
 
 Convert documents to visual knowledge maps — powered by LLM + Mermaid.
 
@@ -9,7 +9,7 @@ Document Text → LLM Structure Extraction → Graph JSON → Mermaid → SVG/PN
 ## Install
 
 ```bash
-pip install doc2map
+pip install doc2mermaid
 
 # Mermaid CLI for SVG/PNG rendering
 npm install -g @mermaid-js/mermaid-cli
@@ -38,9 +38,9 @@ export DOC2MAP_BASE_URL=https://api.openai.com/v1
 export DOC2MAP_API_KEY=sk-...
 export DOC2MAP_MODEL=gpt-4o-mini
 
-doc2map article.md -o map.svg
-doc2map article.md -o map.png --theme dark
-cat article.txt | doc2map - -o map.svg
+doc2mermaid article.md -o map.svg
+doc2mermaid article.md -o map.png --theme dark
+cat article.txt | doc2mermaid - -o map.svg
 ```
 
 ## How It Works

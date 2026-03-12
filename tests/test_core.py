@@ -25,7 +25,10 @@ def _mock_extract(text, **kwargs):
 
 class TestDocToMap:
 
-    def test_missing_llm_config_raises(self):
+    def test_missing_llm_config_raises(self, monkeypatch):
+        monkeypatch.delenv("DOC2MAP_BASE_URL", raising=False)
+        monkeypatch.delenv("DOC2MAP_API_KEY", raising=False)
+        monkeypatch.delenv("DOC2MAP_MODEL", raising=False)
         with pytest.raises(ValueError, match="LLM config required"):
             doc_to_map("some text", output="/tmp/test.svg")
 

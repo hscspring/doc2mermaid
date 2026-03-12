@@ -15,7 +15,7 @@ from doc2map.core import doc_to_map
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="doc2map",
+        prog="doc2mermaid",
         description="Convert documents to visual knowledge maps",
     )
     parser.add_argument(

@@ -5,6 +5,12 @@ Core pipeline: document text → Graph JSON → Mermaid → SVG/PNG.
 import os
 from pathlib import Path
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 from doc2map.extractor import extract_graph
 from doc2map.renderer import graph_to_mermaid, render_mermaid
 
