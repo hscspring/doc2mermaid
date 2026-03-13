@@ -28,7 +28,8 @@ Rules:
 3. Preserve the logical flow of the document
 4. Prefer step-by-step pipelines when the document describes a process
 5. Use appropriate node types to reflect the role of each concept
-6. Return ONLY valid JSON, no markdown fences, no extra text
+6. Node text MUST be in the SAME language as the input document (e.g. Chinese doc → Chinese nodes)
+7. Return ONLY valid JSON, no markdown fences, no extra text
 
 Output format:
 

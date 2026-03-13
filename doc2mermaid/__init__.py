@@ -8,5 +8,5 @@ Usage:
 
 from doc2mermaid.core import doc_to_map
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __all__ = ["doc_to_map"]
